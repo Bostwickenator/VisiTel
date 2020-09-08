@@ -11,35 +11,19 @@ f = 1764        # sound frequency (Hz)
 T = 1 / f       # sample duration (seconds)
 samples = T * rate
 
-# Build a waveshape
-#t = []
-#for i in range(0,int(samples)):
-#    t.append(i * T/samples)
-#t = np.array(t)
-
 t = np.linspace(0, T, samples, endpoint=False)
 x = np.sin(2 * np.pi * f * t)   # make a nice sinewave
 x = x * 0.6                     # attenuate it to match our header
 
 def add_pixel(frame, pos, brightness):
-    # t = np.linspace(0, T, samples, endpoint=False)
     brightness = (1- brightness)
     frame[pos:pos+len(x)] = x * brightness
-    #return np.concatenate((frame, x * brightness))
 
 def pad(frame, pos, pixels):
-    extras = 22# round(((55.0/1000.0) * rate) - (pixels * samples)) 54.932
+    extras = 22
     frame[pos:pos+extras] = [0] * extras
-    #return np.concatenate((frame,[0] * extras))
-
-#T = 0.0545       # sample duration (seconds)
-#f = 1750.0     # sound frequency (Hz)
-#t = np.linspace(0, T, T*rate, endpoint=False)
-#x = np.sin(2*np.pi * f * t)
-#wavio.write("sine24.wav", x, rate, sampwidth=3)
 
 def make_image():
-    #xx= (x * 0.5)
     header = wavio.read("header.wav").data[:, 0]
     norm = max((abs(np.amax(header)),(abs(np.min(header))))) 
     header = header / norm
