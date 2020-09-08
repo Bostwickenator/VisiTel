@@ -1,5 +1,6 @@
 # VisiTel
-![Example](docs/example.jpg)
+![Example](docs/example.jpg) <br />
+<sub><sup>The face you make just before you figure out you've made it work
 ## History
 The Mitsubishi VisiTel was the finest webcam of 1988 listed for a mere $399 USD in [Popular Mechanics Feb 1988](https://books.google.com/books?id=HOQDAAAAMBAJ&lpg=PA50&ots=tzSafLrM-K&dq=visitel%20mitsubishi&pg=PA50#v=onepage&q=visitel%20mitsubishi&f=false)
 
