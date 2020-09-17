@@ -218,7 +218,7 @@ class VisitelWebcam:
 
             output = self.img.finalize()
             if(self.v4l2_device):
-                camera.schedule_frame(output)
+                self.camera.schedule_frame(output)
             if(self.headless == False):
                 cv2.imshow(VisitelWebcam.WINDOW_NAME, output)
                 key = cv2.waitKey(100 if self.live else 0)
